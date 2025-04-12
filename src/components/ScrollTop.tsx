@@ -9,8 +9,9 @@ export default function ScrollTop() {
   };
 
   useEffect(() => {
+    const button = document.querySelector(".scroll-to-top");
+
     const handleScroll = () => {
-      const button = document.querySelector(".scroll-to-top");
       if (button) {
         if (window.scrollY > 300) {
           button.classList.remove("hidden");
@@ -30,7 +31,7 @@ export default function ScrollTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="scroll-to-top fixed bottom-4 right-4 z-50 p-2  text-slate-400 cursor-pointer transition-transform transform hover:scale-120"
+      className="hidden scroll-to-top fixed bottom-4 right-4 z-50 p-2  text-slate-400 cursor-pointer transition-transform transform hover:scale-120"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

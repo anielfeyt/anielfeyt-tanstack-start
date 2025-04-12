@@ -94,7 +94,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
 
       <body className="font-outfit">
-        <header className="flex flex-col sm:flex-row justify-between text-slate-500 lg:border-b border-slate-200 bg-[image:repeating-linear-gradient(315deg,_#e2e8f0_0,_#e2e8f0_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed">
+        <header className="flex flex-col sm:flex-row justify-between text-slate-500 border-b border-slate-200 bg-[image:repeating-linear-gradient(315deg,_#e2e8f0_0,_#e2e8f0_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed">
           <a
             className="flex gap-4 justify-center items-center p-4 border-b sm:border-b-0 border-r border-slate-200 hover:bg-slate-500 hover:text-white transition-colors bg-white"
             href="/"
@@ -114,19 +114,19 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           </a>
           <nav className="flex">
             <a
-              className="grow text-center inline-block p-4 border-x border-slate-200 hover:bg-slate-500 hover:text-white transition-colors bg-white"
+              className="grow text-center inline-block p-2 md:p-4 border-x border-slate-200 hover:bg-slate-500 hover:text-white transition-colors bg-white"
               href="#intro"
             >
               Intro
             </a>
             <a
-              className="grow text-center inline-block p-4 border-r border-slate-200 hover:bg-slate-500 hover:text-white transition-colors bg-white"
+              className="grow text-center inline-block p-2 md:p-4 border-r border-slate-200 hover:bg-slate-500 hover:text-white transition-colors bg-white"
               href="#experience"
             >
               Experience
             </a>
             <a
-              className="grow text-center inline-block p-4  hover:bg-slate-500 hover:text-white transition-colors bg-white"
+              className="grow text-center inline-block p-2 md:p-4  hover:bg-slate-500 hover:text-white transition-colors bg-white"
               href="#technologies"
             >
               Technologies

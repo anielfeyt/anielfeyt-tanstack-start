@@ -6,11 +6,11 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div className="grid min-h-dvh grid-cols-[20px_auto_20px] sm:grid-cols-[50px_auto_50px] grid-rows-[1fr_1px_auto_1px_auto] overflow-hidden">
+    <div className="grid min-h-dvh grid-cols-[12px_auto_12px] sm:grid-cols-[50px_auto_50px] grid-rows-[1fr_1px_auto_1px_auto] overflow-hidden">
       <div className="border-x border-x-slate-200 bg-[image:repeating-linear-gradient(315deg,_#e2e8f0_0,_#e2e8f0_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
 
       <div className=" ">
-        <section id="intro" className="mt-20">
+        <section id="intro" className="mt-10 md:mt-20">
           <div className="grow flex flex-col lg:flex-row relative before:absolute before:top-0 before:-left-[100vw] before:h-px before:bg-slate-200 before:w-[200vw]  after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:bg-slate-200 after:w-[200vw]">
             <div className="border border-x-0 lg:border-r border-slate-200 w-full h-auto lg:w-[600px] z-10 mx-auto">
               <img
