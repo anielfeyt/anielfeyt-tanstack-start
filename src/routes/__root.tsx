@@ -56,7 +56,14 @@ export const Route = createRootRoute({
         async: true,
       },
       {
-        src: "/src/scripts/ga4.js",
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", "G-7DSL4DHNN5");
+        `,
       },
     ],
   }),
