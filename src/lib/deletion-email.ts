@@ -1,8 +1,7 @@
-import { createAPIFileRoute } from "@tanstack/react-start/api";
+import { createServerFn } from "@tanstack/react-start";
 import { Resend } from "resend";
-import { validateDeletionBody, type DeletionBody } from "@/lib/delete-account";
+import { validateDeletionBody, type DeletionBody } from "./delete-account";
 
-// Helper function to escape HTML special characters
 function escapeHtml(str: string): string {
   const map: Record<string, string> = {
     "&": "&amp;",
@@ -14,23 +13,19 @@ function escapeHtml(str: string): string {
   return str.replace(/[&<>"']/g, (char) => map[char]);
 }
 
-// Initialize Resend client at module scope
-if (!process.env.RESEND_API_KEY) {
-  throw new Error("RESEND_API_KEY environment variable is not set");
-}
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-export const APIRoute = createAPIFileRoute("/api/delete-account")({
-  POST: async ({ request }) => {
-    const body = await request.json().catch(() => null);
-
-    const error = validateDeletionBody(body);
-    if (error) {
-      return Response.json({ error }, { status: 400 });
+export const submitDeletionRequest = createServerFn({ method: "POST" })
+  .inputValidator((data: DeletionBody) => {
+    const error = validateDeletionBody(data);
+    if (error) throw new Error(error);
+    return data;
+  })
+  .handler(async ({ data }) => {
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error("RESEND_API_KEY environment variable is not set");
     }
 
-    const { fullName, email, username, reason } = body as DeletionBody;
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { fullName, email, username, reason } = data;
 
     const { error: sendError } = await resend.emails.send({
       from: "Shard Cards <noreply@anielfeyt.com>",
@@ -47,12 +42,8 @@ export const APIRoute = createAPIFileRoute("/api/delete-account")({
 
     if (sendError) {
       console.error("[delete-account] Resend send error:", sendError);
-      return Response.json(
-        { error: "Failed to send request. Please try again." },
-        { status: 500 },
-      );
+      throw new Error("Failed to send request. Please try again.");
     }
 
-    return Response.json({ success: true });
-  },
-});
+    return { success: true };
+  });

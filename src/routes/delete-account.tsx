@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { submitDeletionRequest } from "@/lib/deletion-email";
 
 export const Route = createFileRoute("/delete-account")({
   head: () => ({
@@ -47,19 +48,7 @@ function DeleteAccountPage() {
     setErrorMessage("");
 
     try {
-      const res = await fetch("/api/delete-account", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(
-          (data as { error?: string }).error ?? "Something went wrong. Please try again."
-        );
-      }
-
+      await submitDeletionRequest({ data: form });
       setStatus("success");
     } catch (err) {
       setStatus("error");
