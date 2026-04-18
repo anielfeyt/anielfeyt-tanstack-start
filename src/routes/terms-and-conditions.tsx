@@ -94,9 +94,9 @@ export default function TermsAndConditions() {
         <p>
           All personal information you enter into the App is stored locally on
           your device. You are solely responsible for the accuracy, maintenance,
-          and security of that information. We have no access to it and accept no
-          liability for any loss of data resulting from device failure, loss, or
-          theft.
+          and security of that information. We have no access to it and accept
+          no liability for any loss of data resulting from device failure, loss,
+          or theft.
         </p>
       </Section>
 
@@ -143,10 +143,10 @@ export default function TermsAndConditions() {
         <p>
           Email:{" "}
           <a
-            href="mailto:imbuecore@gmail.com"
+            href="mailto:anielfeyt.dev@gmail.com"
             className="text-slate-600 underline underline-offset-2 hover:text-slate-800 transition-colors"
           >
-            imbuecore@gmail.com
+            anielfeyt.dev@gmail.com
           </a>
         </p>
         <p>

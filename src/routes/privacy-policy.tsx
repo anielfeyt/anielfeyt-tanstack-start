@@ -50,15 +50,15 @@ export default function PrivacyPolicy() {
         <p>
           Aniel Feyt ("we", "us", "our") operates the Shard Cards mobile
           application ("the App"). This Privacy Policy explains how we handle
-          your personal information in compliance with the Protection of Personal
-          Information Act 4 of 2013 (POPIA).
+          your personal information in compliance with the Protection of
+          Personal Information Act 4 of 2013 (POPIA).
         </p>
       </Section>
 
       <Section number={2} title="Information We Collect">
         <p>
-          You may enter the following categories of personal information into the
-          App:
+          You may enter the following categories of personal information into
+          the App:
         </p>
         <ul className="list-disc list-inside space-y-1 pl-2">
           <li>Contact and address details</li>
@@ -92,9 +92,7 @@ export default function PrivacyPolicy() {
           </a>
           .
         </p>
-        <p>
-          We do not use analytics, advertising SDKs, or tracking tools.
-        </p>
+        <p>We do not use analytics, advertising SDKs, or tracking tools.</p>
       </Section>
 
       <Section number={4} title="How Your Information Is Used">
@@ -152,17 +150,17 @@ export default function PrivacyPolicy() {
         </ul>
         <p>
           Since personal data entered into the App lives only on your device,
-          you can delete it at any time by editing or deleting entries within the
-          App, or by uninstalling the App.
+          you can delete it at any time by editing or deleting entries within
+          the App, or by uninstalling the App.
         </p>
         <p>
           To exercise any of the above rights or to raise a complaint, contact
           us at{" "}
           <a
-            href="mailto:imbuecore@gmail.com"
+            href="mailto:anielfeyt.dev@gmail.com"
             className="text-slate-600 underline underline-offset-2 hover:text-slate-800 transition-colors"
           >
-            imbuecore@gmail.com
+            anielfeyt.dev@gmail.com
           </a>
           .
         </p>
@@ -189,10 +187,10 @@ export default function PrivacyPolicy() {
         <p>
           Email:{" "}
           <a
-            href="mailto:imbuecore@gmail.com"
+            href="mailto:anielfeyt.dev@gmail.com"
             className="text-slate-600 underline underline-offset-2 hover:text-slate-800 transition-colors"
           >
-            imbuecore@gmail.com
+            anielfeyt.dev@gmail.com
           </a>
         </p>
         <p>
