@@ -33,7 +33,7 @@ export const APIRoute = createAPIFileRoute("/api/delete-account")({
     const { fullName, email, username, reason } = body as DeletionBody;
 
     const { error: sendError } = await resend.emails.send({
-      from: "Shard Cards <onboarding@resend.dev>",
+      from: "Shard Cards <noreply@anielfeyt.com>",
       to: ["anielfeyt.dev@gmail.com"],
       subject: `Account Deletion Request — ${escapeHtml(fullName)}`,
       html: `
@@ -49,7 +49,7 @@ export const APIRoute = createAPIFileRoute("/api/delete-account")({
       console.error("[delete-account] Resend send error:", sendError);
       return Response.json(
         { error: "Failed to send request. Please try again." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
