@@ -19,7 +19,19 @@
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('dependencies',{}\\).get\\('resend','NOT FOUND'\\)\\)\")",
       "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\(p.dependencies?.resend || 'NOT FOUND'\\)\")",
       "mcp__plugin_claude-mem_mcp-search__smart_outline",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(node -e \"const r = require\\('./node_modules/@tanstack/react-start/api'\\); console.log\\(Object.keys\\(r\\)\\)\")",
+      "Bash(node -e \"import\\('./node_modules/@tanstack/react-start/package.json', {assert:{type:'json'}}\\).then\\(m=>console.log\\(m.default.version\\)\\)\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d['version']\\); print\\(list\\(d.get\\('exports',{}\\).keys\\(\\)\\)[:20]\\)\")",
+      "Bash(node -p \"JSON.parse\\(require\\('fs'\\).readFileSync\\('node_modules/@tanstack/react-start/package.json','utf8'\\)\\).version\")",
+      "Bash(node -p \"Object.keys\\(JSON.parse\\(require\\('fs'\\).readFileSync\\('node_modules/@tanstack/react-start/package.json','utf8'\\)\\).exports||{}\\).slice\\(0,20\\)\")",
+      "Bash(rm src/routes/api/delete-account.ts)",
+      "Bash(rmdir src/routes/api)",
+      "Bash(node -p \"Object.keys\\(JSON.parse\\(require\\('fs'\\).readFileSync\\('node_modules/@tanstack/react-start/package.json','utf8'\\)\\).exports\\)\")",
+      "Bash(node -e \"const m = require\\('fs'\\).readFileSync\\('node_modules/@tanstack/react-start/server/index.js','utf8'\\).slice\\(0,500\\); console.log\\(m\\)\")",
+      "Bash(node -p \"JSON.parse\\(require\\('fs'\\).readFileSync\\('node_modules/@tanstack/react-start/package.json','utf8'\\)\\).exports['./server']\")",
+      "Bash(node -p \"Object.keys\\(JSON.parse\\(require\\('fs'\\).readFileSync\\('node_modules/@tanstack/react-start-server/package.json','utf8'\\)\\).exports||{}\\)\")",
+      "Bash(node -e \"import\\('@tanstack/react-start'\\).then\\(m => console.log\\(Object.keys\\(m\\).filter\\(k => k.includes\\('Server'\\) || k.includes\\('server'\\)\\)\\)\\)\")"
     ]
   }
 }
